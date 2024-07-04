@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Menu on Click</title>
+<style>
+  /* Styles for the dropdown menu */
+  .footer{
+    text-align: center;
+    bottom: 0%;
+    padding-top: 30px;
+    }
+  body {
+  font-family: "Open Sans", sans-serif;
+    /* Multiple background images */
+    background: linear-gradient(to top,rgb(245, 184, 72),skyblue,rgb(139, 239, 139));
+    /* Background position */
+    background-position: center;
+
+    /* Background size */
+    background-size: contain;
+
+    /* Background repeat */
+    background-repeat: no-repeat;
+
+    /* Background attachment to make it scrollable */
+    background-attachment:scroll;
+    
+    /* Other styling to ensure the page is scrollable */
+    height: auto;
+   /* Example height to enable scrolling */
+    margin: 0;
+    padding: 0;
+}
+  .nav{
+        background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    align-items: center;
+  }
+    img{
+      border-radius: 50%;
+    }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  span{
+    margin-left: 100px;
+  }
+  /* features fieldset block */
+    fieldset {
+            display:flex
+            width: 90%;
+            margin: 20px;
+            margin-top: 40px;
+            border: 1px solid white;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            color: white;
+        }
+        legend {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .feature img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .feature-details {
+            max-width: 600px;
+        }
+        .main-point {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sub-point {
+            font-size: 1em;
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        hr {
+            border: 1px solid white;
+            margin: 20px 0;
+        }
+</style>
+</head>
+<body>
+    
+<div class="nav">
+<div class="dropdown">
+  <img src="./static/img/logo.avif" width="50" height="50"  onclick="toggleDropdown()">
+  <div class="dropdown-content" id="dropdownMenu">
+    <a href="./home.html">Home</a>
+    <a href="./about.html">About Us</a>
+    <a href="#features">Features</a>
+    <a href="./index.html">Logout</a>
+  </div>
+</div>
+<marquee style="color: white; font-size: 20px; font-weight: bold; border-radius: 15px; padding: 10px;">
+    AI_Kitchen
+</marquee>
+
+<script>
+  function toggleDropdown() {
+    var dropdownMenu = document.getElementById("dropdownMenu");
+    if (dropdownMenu.style.display === "block") {
+      dropdownMenu.style.display = "none";
+    } else {
+      dropdownMenu.style.display = "block";
+    }
+  }
+</script>
+</div>
+<fieldset>
+  <legend>Features</legend>
+  
+  <div class="feature">
+      <img src="./static/img/rec3.jpg" style="border-radius: 0; width: 300px;" alt="APOD Image">
+      <div class="feature-details">
+          <div class="main-point">Recipe Suggestions and Customization</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>: Recipe Recommendations: Suggest recipes based on available ingredients, dietary preferences, and user favorites.</li>
+              <li><strong>API Endpoint</strong>:Customizable Recipes: Adjust recipes to accommodate dietary restrictions (e.g., gluten-free, vegan), portion sizes, and ingredient substitutions. <code>/planetary/apod</code></li>
+              <li><strong>Data Provided</strong>: Recipe Scaling: Automatically scale recipes up or down based on the number of servings needed.</li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/visual2.jpeg" style="border-radius: 0; width: fit-content" alt="Mars Rover Photos Image">
+      <div class="feature-details">
+          <div class="main-point">Visual Assistance</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>:Voice Command Integration: Hands-free interaction through voice commands for ease of use while cooking.
+              </li>
+              <li><strong>API Endpoint</strong>:Step-by-Step Visual Guidance: Display step-by-step instructions with images or videos to guide users through recipes.</li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/rec3.jpg" style="border-radius: 0; width: 300px;" alt="EONET Image">
+      <div class="feature-details">
+          <div class="main-point">Ingredient Management</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>:inventory Tracking: Keep track of pantry items and notify users when ingredients are running low. </li>
+              <li><strong>API Endpoint</strong>:Expiration Date Alerts: Monitor ingredient expiration dates and suggest recipes to use up ingredients before they go bad. </code></li>
+              <li><strong>Data Provided</strong>:Shopping List Integration: Automatically generate shopping lists based on selected recipes and inventory levels. </li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/nutri2.jpg" style="border-radius: 0;width: 200px;" alt="NeoWs Image">
+      <div class="feature-details">
+          <div class="main-point"> Nutritional Information</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>: Nutritional Analysis: Provide detailed nutritional information for recipes, including calorie count, macros, and vitamins. </li>
+              <li><strong>API Endpoint</strong>:Dietary Goals Tracking: Help users track their dietary goals, such as calorie intake, protein consumption, and more. </li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/kitc2.jpeg" style="border-radius: 0;width: fit-content;" alt="Exoplanet Archive Image">
+      <div class="feature-details">
+          <div class="main-point">Integration with Kitchen Appliances</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>:Smart Appliance Control: Integrate with smart kitchen appliances (e.g., ovens, fridges) for automated control and monitoring.</li>
+              <li><strong>API Endpoint</strong>: Cooking Mode Syncing: Sync cooking modes with smart appliances for precise cooking settings.<code>/exoplanet/</code></li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/profileee.jpeg" style="border-radius: 0;width: 220px;" alt="NASA Image and Video Library Image">
+      <div class="feature-details">
+          <div class="main-point">User Profiles and Preferences</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>: User Profiles: Support multiple user profiles, each with personalized preferences and dietary restrictions.</li>
+              <li><strong>API Endpoint</strong>: Learning Capabilities: Learn user preferences over time to provide more tailored recommendations.</li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/commu.webp" style="border-radius: 0;width: 320px;" alt="ISS Location Image">
+      <div class="feature-details">
+          <div class="main-point"> Community Features</div>
+          <ul class="sub-point">
+              <li><strong>API Endpoint</strong>: Recipe Sharing: Enable users to share their recipes and cooking experiences with others.</li>
+              <li><strong>Data Provided</strong>: Social Integration: Integrate with social media platforms for easy sharing of cooking achievements and recipes.</li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/feedback.png" style="border-radius: 0;width: 330px;" alt="Solar System Dynamics Image">
+      <div class="feature-details">
+          <div class="main-point">Feedback and Reviews</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>: User Reviews: Allow users to rate and review recipes.</li>
+              <li><strong>API Endpoint</strong>:Feedback Loop: Collect feedback to improve recipe suggestions and overall user experience</li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  
+  <div class="feature">
+      <img src="./static/img/lang.jpeg" style="border-radius: 0;width:fit-content" alt="Mars Weather Service Image">
+      <div class="feature-details">
+          <div class="main-point">Localization and Language Support</div>
+          <ul class="sub-point">
+              <li><strong>Feature</strong>:Multilingual Support: Offer instructions and recipes in multiple languages. </li>
+              <li><strong>API Endpoint</strong>: Cultural Recipes: Include recipes from various cultures to cater to diverse user bases.</li>
+              <li><strong>Data Provided</strong>: Sol (Martian day), temperature, wind speed, atmospheric pressure.</li>
+          </ul>
+      </div>
+  </div>
+  <hr>
+  <hr>
+  <hr>
+</fieldset>
+</div>
+</body>
+</html>
